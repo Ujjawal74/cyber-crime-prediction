@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/main.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <title>Cyber Crime Analysis using Machine Learning</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="brand"><h2>Cyber Crime Analysis</h2></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/predictions">Predictions</a>
+          <a href="#">About</a>
+          <a href="#">Info</a>
+          <a href="#">More</a>
+        </nav>
+      </header>
+      <div class="carousel">
+        <div class="slide">
+          <img src="static/images/cyber3.jpg" alt="" />
+          <div class="slide-detail">
+            <h2>
+              Cybercrime damage costs are predicted to hit $6 trillion annually
+              by 2021
+            </h2>
+            <p style="font-size: 22px">
+              Cyber crime damages will cost the world $6 trillion annually by
+              2021, up from $3 trillion in 2015.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="static/images/cyber2.jpg" alt="" />
+          <div class="slide-detail">
+            <h2>
+              Cybersecurity spending will exceed $1 trillion from 2017 to 2021
+            </h2>
+            <p>
+              The cybersecurity market is continuing its stratospheric growth
+              and hurtling towards the trillion dollar mark that we originally
+              predicted in 2017.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="static/images/cyber5.jpg" alt="" />
+          <div class="slide-detail">
+            <h2>
+              The world will have 3.5 million unfilled cybersecurity jobs by the
+              end of 2021.
+            </h2>
+            <p>
+              There will be 3.5 million unfilled cybersecurity jobs by 2021 —
+              enough to fill 50 NFL stadiums
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="static/images/cyber4.jpg" alt="" />
+          <div class="slide-detail">
+            <h2>
+              Ransomware damage costs are predicted to grow more than 57X from
+              2015 to 2021.
+            </h2>
+            <p>
+              Global ransomware damage costs are predicted to reach $20 billion
+              by 2021, up from $325 million in 2015.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="static/images/cyber6.jpg" alt="" />
+          <div class="slide-detail">
+            <h2>
+              70 percent of cryptocurrency transactions will be for illegal
+              activity by 2021
+            </h2>
+            <p>
+              Around $76 billion of illegal activity per year involves bitcoin,
+              which is close to the scale of the U.S.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="navigate">
+        <span class="roll" data-number="0"></span>
+        <span class="roll" data-number="1"></span>
+        <span class="roll" data-number="2"></span>
+        <span class="roll" data-number="3"></span>
+        <span class="roll" data-number="4"></span>
+      </div>
+      <div class="main">
+        <div class="content">
+          <h2>Cyber Crime Analysis using Machine Learning</h2>
+          <h3 style="color: hotpink">What is Cyber Crime?</h3>
+          <p>
+            Cybercrime is a crime that involves a computer and a network. The
+            computer may have been used in the commission of a crime, or it may
+            be the target. Cybercrime may harm someone's security and financial
+            health. There are many privacy concerns surrounding Cybercrime when
+            confidential information is intercepted or disclosed, lawfully or
+            otherwise. Internationally, both governmental and non-state actors
+            engage in cybercrimes, including espionage, financial theft, and
+            other cross-border crimes. Cybercrimes crossing international
+            borders and involving the actions of at least one nation-state are
+            sometimes referred to as cyberwarfare. Warren Buffett describes
+            Cybercrime as the "number one problem with mankind" and "poses real
+            risks to humanity." A report (sponsored by McAfee) published in 2014
+            estimated that the annual damage to the global economy was $445
+            billion. A 2016 report by Cybersecurity ventures predicted that
+            global damages incurred as a result of cybercrime would cost up to
+            $6 trillion annually by 2021 and $10.5 trillion annually by 2025.
+            Approximately $1.5 billion was lost in 2012 to online credit and
+            debit card fraud in the US. In 2018, a study by the Center for
+            Strategic and International Studies (CSIS), in partnership with
+            McAfee, concludes that nearly one percent of global GDP, close to
+            $600 billion, is lost to cybercrime each year. The World Economic
+            Forum 2020 Global Risk report confirmed that organized Cybercrimes
+            bodies are joining forces to perpetrate criminal activities online
+            while estimating the likelihood of their detection and prosecution
+            to be less than 1 percent in the US.
+          </p>
+          <br />
+          <h2>Search For a State/UT</h2>
+          <div class="search-box">
+            <select name="states" id="get_val">
+              <option value="">Select</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="A & N Islands">A & N Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="D&N Haveli">D&N Haveli</option>
+              <option value="Daman & Diu">Daman & Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+            </select>
+            <button id="main-btn">Search</button>
+          </div>
+          <div class="more_info">
+            <h2 id="set_title"></h2>
+            <div class="info set-val">
+              <div class="set-info"></div>
+              <div id="graph-plot" style="width: 100%; height: 300px"></div>
+            </div>
+            <div class="info">
+              <h2>Types of Cyber Crime</h2>
+              <li>DDoS Attacks</li>
+              <li>Botnets</li>
+              <li>Identity Theft</li>
+              <li>Cyberstalking</li>
+              <li>Social Engineering</li>
+              <li>PUPs</li>
+              <li>Phishing</li>
+              <li>Prohibited/Illegal Content</li>
+              <li>Online Scams</li>
+              <li>Exploit Kits</li>
+            </div>
+            <div class="info">
+              <h2>Why do cyber attacks happen?</h2>
+              <p>
+                Most often, cyber attacks happen because criminals want your:
+              </p>
+              <li>business' financial details</li>
+              <li>customers' financial details (eg credit card data)</li>
+              <li>sensitive personal data</li>
+              <li>customers' or staff email addresses and login credentials</li>
+              <li>customer databases</li>
+              <li>clients lists</li>
+              <li>IT infrastructure</li>
+              <li>IT services (eg the ability to accept online payments)</li>
+              <li>
+                intellectual property (eg trade secrets or product designs)
+              </li>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <h2>Key Figures</h2>
+          <div class="widget">
+            <h3>Latest Cyber Crime Records</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <h4>Most Number of Cyber Crimes in 2021</h4>
+                <p>Karnataka with 15654 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Least Number of Cyber Crimes in 2021</h4>
+                <p>D&N Haveli and Daman & Diu for only 4 cases Registered!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Total Cases in 2021</h4>
+                <p>57536 in India.</p>
+              </div>
+            </div>
+          </div>
+          <div class="widget">
+            <h3>Cyber Crime Records</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <h4>Most Number of Cyber Crimes in 2020</h4>
+                <p>Karnataka with 13541 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Least NUmber of Cyber Crimes in 2020</h4>
+                <p>D&N Haveli With 0 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Total Cases in 2020</h4>
+                <p>51307 in India.</p>
+              </div>
+            </div>
+          </div>
+          <div class="widget">
+            <h3>Did You Know?</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <h4>Most Affected State in Last 6 Years</h4>
+                <p>Uttar Pradesh with 55,626 cases from 2015-2021!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Least Affected State in Last 6 Years</h4>
+                <p>Mizoram along with D&N Haveli With Only 6 cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <h4>Current Rate Of Cyber Crime</h4>
+                <p>Rate of Cyber Crime is increasing Every Year!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>Team Project of CSE 2021-2022</p>
+      </footer>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        function show_chart(graph) {
+          google.charts.load("current", { packages: ["corechart"] });
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable(graph);
+
+            var options = {
+              is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(
+              document.getElementById("graph-plot")
+            );
+            chart.draw(data, options);
+          }
+        }
+
+        let initial = 0;
+
+        $("#main-btn").click(function (e) {
+          $(".set-val").css("display", "flex");
+          $("#set_title").css("display", "flex");
+          let html = "";
+          let val = $("#get_val").val();
+          fetch("/api", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: val,
+            }),
+          })
+            .then((res) => res.json())
+            .then((results) => {
+              for (const key in results.data) {
+                html += `<li style="color:royalblue; list-style:none;">${key} : <span style="color:hotpink;">${results.data[key]}</span></li>`;
+              }
+              $("#set_title").html("");
+              $(".set-info").html("");
+              $("#set_title").append(
+                `<h2>Cyber Crime Overview of ${results.name} </h2>`
+              );
+              $(".set-info").append(html);
+              show_chart(results.graph);
+            });
+        });
+        $(".roll").click(function (e) {
+          let n = parseInt($(this).attr("data-number"));
+          move = `-${(n - initial) * 100}%`;
+          $(".slide").css("transform", `translateX(${move})`);
+        });
+
+        let curr = 1;
+        setInterval(function () {
+          move = `${-(curr - initial) * 100}%`;
+          $(".slide").css("transform", `translateX(${move})`);
+          if (curr == 4) {
+            curr = -1;
+          }
+          curr++;
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

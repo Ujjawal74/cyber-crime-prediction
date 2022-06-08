@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="static/main.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      select {
+        padding: 10px;
+      }
+      select,
+      input {
+        margin: 10px 0;
+      }
+    </style>
+    <title>Cyber Crime Analysis using Machine Learning</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="brand"><h2>Cyber Crime Analysis</h2></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/predictions">Calculate</a>
+          <a href="#">About</a>
+          <a href="#">Info</a>
+          <a href="#">More</a>
+        </nav>
+      </header>
+      <div class="main">
+        <div class="content" style="min-height: 100vh">
+          <div class="analysis-container">
+            <div id="myPlot"></div>
+            <div class="extra-details"></div>
+          </div>
+
+          <div class="results_info">
+            <div id="final_result"></div>
+          </div>
+          <br />
+          <h2>Search For a State/UT</h2>
+          <div class="search-box" style="flex-direction: column">
+            <select name="states" id="state">
+              <option value="">Select State</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+            <input type="text" id="year" placeholder="Year" />
+            <input type="text" id="population" placeholder="Population" />
+            <input
+              type="text"
+              id="tis"
+              placeholder="Total Internet Subscriptions"
+            />
+            <input
+              type="text"
+              id="tbs"
+              placeholder="Total Broadband Subscriptions"
+            />
+            <input
+              type="text"
+              id="twis"
+              placeholder="Total Wireless internet Subscriptions"
+            />
+            <br />
+            <button id="main-btn">Search</button>
+          </div>
+          <div class="more_info">
+            <h2 id="set_title"></h2>
+            <div class="info set-val">
+              <div class="set-info"></div>
+              <div id="graph-plot" style="width: 100%; height: 300px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>Team Project of CSE 2021-2022</p>
+      </footer>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const showScatterplot = (
+          state,
+          years_known,
+          years_data_known,
+          years_display,
+          years_data_display
+        ) => {
+          const layout = {
+            title: `${state} Crime Analysis`,
+            xaxis: {
+              title: "Year",
+            },
+            yaxis: {
+              title: "Cases Reported",
+            },
+          };
+
+          const config = {
+            displayModeBar: false,
+          };
+
+          const trace1 = {
+            x: years_known,
+            y: years_data_known,
+            mode: "markers+lines",
+            type: "scatter",
+            name: "Known",
+          };
+
+          const trace2 = {
+            x: years_display,
+            y: years_data_display,
+            mode: "markers+lines",
+            opacity: 0.7,
+            type: "scatter",
+            name: "Predicted",
+          };
+
+          const data = [trace1, trace2];
+
+          Plotly.newPlot("myPlot", data, layout, config);
+        };
+
+        $("#main-btn").click(function (e) {
+          let state = $("#state").val();
+          let year = $("#year").val();
+          let population = $("#population").val();
+          let tis = $("#tis").val();
+          let tbs = $("#tbs").val();
+          let twis = $("#twis").val();
+
+          data = {
+            state,
+            year,
+            population,
+            tis,
+            tbs,
+            twis,
+          };
+
+          fetch("/predictions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              state_info: data,
+            }),
+          })
+            .then((res) => res.json())
+            .then((response) => {
+              // console.log(response);
+              $("#final_result").html(
+                `<h1>Predicted Crime in ${data.year} : ${Math.floor(
+                  response.result
+                )}</h1>`
+              );
+              const state = data.state;
+              const years_known = response.years_known;
+              const years_data_known = response.years_data_known;
+              const years_display = response.years_display;
+              const years_data_display = response.years_data_display;
+              const all_years_predictions = response.all_years_predictions;
+              const max_predictions = response.max_predictions;
+
+              $("#myPlot").css("display", "inline-block");
+              $(".extra-details").css("display", "inline-block");
+              $(".extra-details").html('')
+              
+              $(".extra-details").append(
+                `<h2>Highest is in: ${max_predictions} </h2>`
+              );
+              $(".extra-details").append(
+                `<h2>All States Predictions are: </h2>`
+              );
+              for (var key in all_years_predictions) {
+                $(".extra-details").append(
+                  `<h3>${key}</h3><p>${all_years_predictions[key]}</p><br>`
+                );
+              }
+
+              showScatterplot(
+                state,
+                years_known,
+                years_data_known,
+                years_display,
+                years_data_display
+              );
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

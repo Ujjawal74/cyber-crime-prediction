@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 12vh;
+  background: rgb(0, 15, 155);
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.carousel {
+  width: 100%;
+  height: 42vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.navigate {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  display: flex;
+}
+.navigate span {
+  display: block;
+  height: 12px;
+  width: 12px;
+  background: rgb(0, 47, 255);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide-detail {
+  margin-top: -12%;
+  margin-left: 15%;
+  color: #fff;
+  /* z-index: 2; */
+}
+.slide-detail h2{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.slide-detail p{
+  color: rgb(255, 217, 0);
+  font-size: 22px;
+  font-weight: bold;
+  /* margin: -10px; */
+}
+.brand {
+  width: auto;
+  color: #fff;
+  margin: 0 10px;
+  font-style: italic;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: cornsilk;
+  color: #000;
+  border-radius: 10px;
+}
+
+.main {
+  display: flex;
+  /* flex-direction: column; */
+  padding: 10px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 10px;
+  font-size: 18px;
+}
+.content h2 {
+  margin-bottom: 10px;
+}
+.sidebar {
+  width: 30%;
+  padding: 10px;
+}
+.sidebar h2 {
+  margin-left: 5px;
+}
+.sidebar .widget {
+  padding: 10px;
+}
+.sidebar .widget:nth-child(1) {
+  padding-top: 0;
+}
+.widget h3 {
+  color: green;
+}
+.widget_detail {
+  margin: 5px 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 7px;
+}
+.widget_detail_info {
+  padding: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.widget_detail_info:last-child {
+  border-bottom: 0;
+}
+
+.widget_detail_info h4 {
+  color: royalblue;
+}
+
+.search-box {
+  display: flex;
+}
+.search-box input {
+  padding: 10px;
+  border: 2px solid rgb(250, 250, 43);
+  border-radius: 5px;
+  font-size: 18px;
+}
+.search-box input:focus {
+  outline: none;
+  border: 2px solid lawngreen;
+}
+.search-box button {
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 18px;
+  cursor: pointer;
+  background: rgb(0, 153, 255);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.search-box button:hover {
+  background: rgb(11, 194, 109);
+  transform: scale(1.1);
+}
+.more_info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  margin: 5px 0;
+  padding: 5px;
+}
+
+footer {
+  display: flex;
+  height: 8vh;
+  background: rgb(0, 15, 155);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-val{
+  display: none;
+}
+.set-info{
+  width: 30%;
+}
+.graph-plot{
+  width: 70%;
+}
+#set_title{
+  display: none;
+  justify-content: center;
+}
+
+
+.analysis-container{
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#myPlot{
+  display: none;
+  height: 50vh;
+  width: 70%;
+  max-width: 700px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.extra-details{
+  width: 30%;
+  height: 50vh;
+  padding: 10px;
+  display: none;
+  overflow-y: scroll;
+}
